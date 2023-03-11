@@ -1,8 +1,8 @@
 <?php
 
-namespace Src\Auth;
+namespace Src\Auth\Presentation\Dtos;
 
-use Src\Shared\Infrastructure\BaseDto;
+use Src\Shared\Presentation\Utils\BaseDto;
 
 class LoginDto extends BaseDto
 {

@@ -9,7 +9,7 @@ use Src\Security\Application\CreateUserDto;
 use Src\Security\Application\UpdateUserDto;
 use Src\Security\Infrastructure\Models\Role;
 use Src\Security\Infrastructure\Models\User;
-use Src\Shared\Infrastructure\BaseRepository;
+use Src\Shared\Infrastructure\Utils\BaseRepository;
 
 class UserRepository extends BaseRepository
 {
@@ -29,7 +29,6 @@ class UserRepository extends BaseRepository
             DB::rollBack();
             return false;
         }
-        return false;
     }
     public function update(UpdateUserDto $request, $id)
     {

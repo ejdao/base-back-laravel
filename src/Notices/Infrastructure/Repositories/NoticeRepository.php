@@ -36,6 +36,5 @@ class NoticeRepository
             DB::rollBack();
             return false;
         }
-        return false;
     }
 }

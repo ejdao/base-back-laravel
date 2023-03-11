@@ -3,7 +3,7 @@
 namespace Src\Security\Application;
 
 use Illuminate\Validation\Rule;
-use Src\Shared\Infrastructure\BaseDto;
+use Src\Shared\Presentation\Utils\BaseDto;
 
 class UpdateUserDto extends BaseDto
 {

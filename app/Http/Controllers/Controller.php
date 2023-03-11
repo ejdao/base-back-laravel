@@ -6,6 +6,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Src\Shared\Application\Constants\Contexts;
 
 /**
  * @OA\Info(title="Notice Backend PHP", version="1.0")
@@ -28,6 +29,11 @@ class Controller extends BaseController
     use AuthorizesRequests,
     DispatchesJobs,
         ValidatesRequests;
+
+    public function guard()
+    {
+        return Contexts::defaultGuard();
+    }
 }
 // Documentation's examples here:
 // https://github.com/caohoangtu/swagger-lesson-1/blob/master/app/Http/Controllers/TodoController.php

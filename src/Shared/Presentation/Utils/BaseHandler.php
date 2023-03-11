@@ -1,15 +1,20 @@
 <?php
 
-namespace Src\Shared\Presentation;
+namespace Src\Shared\Presentation\Utils;
+
+use Src\Shared\Application\Constants\Contexts;
 
 class BaseHandler
 {
 
-    public $guard = "api";
-
-    public function responseOk($data)
+    public function guard()
     {
-        return response()->json($data, 200);
+        return Contexts::defaultGuard();
+    }
+
+    public function responseOk($data, $message = 'Request executed successfully')
+    {
+        return response()->json(['success' => true, 'data' => $data, 'message' => $message], 200);
     }
 
     public function responseCreated()

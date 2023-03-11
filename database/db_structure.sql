@@ -153,7 +153,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role_id`, `document_type_id`, `document_number`, `full_name`, `email`, `username`, `password`, `active`, `created_at`, `updated_at`, `created_by`, `updated_by`) VALUES
-(1, 1, NULL, NULL, 'ENRIQUE JOSE DE ARMAS OSIA', 'ejdao2022@gmail.com', NULL, '$2y$10$PgBXqWsevSjzo7kKgK9j3.3SWQqPE8aqBTAceQG7AkqrhEOOOL8Zy', 1, '2022-11-27 15:48:40', '2022-11-27 15:48:40', 1, NULL);
+(1, 1, NULL, NULL, 'ENRIQUE JOSE DE ARMAS OSIA', 'admin', NULL, '$2a$10$UtdB5K1nRtWlbbgUygtBt.8yzMnf0YOzrT9bWecZCjsBkpXLBe2BW', 1, '2022-11-27 15:48:40', '2022-11-27 15:48:40', 1, NULL);
 
 --
 -- Índices para tablas volcadas

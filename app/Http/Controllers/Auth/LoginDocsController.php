@@ -2,24 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use Src\Auth\LoginDto;
-use Src\Auth\LoginHandler;
-use Src\Shared\Presentation\BaseHandler;
+use Src\Auth\Presentation\Dtos\LoginDto;
 
-class LoginController extends Controller
+interface LoginDocsController
 {
 
-    private $_baseHandler;
-
-    private $_loginHandler;
-
-    public function __construct()
-    {
-        $this->_loginHandler = new LoginHandler();
-
-        $this->_baseHandler = new BaseHandler();
-    }
     /**
      * @OA\Post (
      *     path="/v1/login",
@@ -41,7 +28,7 @@ class LoginController extends Controller
      *                 ),
      *                 example={
      *                     "email":"admin",
-     *                     "password":"123"
+     *                     "password":"1234"
      *                }
      *             )
      *         )
@@ -56,10 +43,8 @@ class LoginController extends Controller
      *      )
      *  )
      */
-    public function login(LoginDto $body)
-    {
-        return $this->_loginHandler->execute($body);
-    }
+    public function login(LoginDto $body);
+
     /**
      * @OA\Get(
      *     path="/v1/refresh",
@@ -75,11 +60,7 @@ class LoginController extends Controller
      *   )
      * )
      */
-    public function refresh()
-    {
-        $token = auth($this->_baseHandler->guard)->refresh();
-        return response()->json($token, 200);
-    }
+    public function refresh();
     /**
      * @OA\Get(
      *     path="/v1/logout",
@@ -95,9 +76,5 @@ class LoginController extends Controller
      *   )
      * )
      */
-    public function logout()
-    {
-        auth($this->_baseHandler->guard)->logout();
-        return response()->json([], 204);
-    }
+    public function logout();
 }

@@ -5,7 +5,7 @@ namespace Src\Security\Presentation;
 use Src\Security\Application\CreateUserDto;
 use Src\Security\Application\UpdateUserDto;
 use Src\Security\Infrastructure\Repositories\UserRepository;
-use Src\Shared\Presentation\BaseHandler;
+use Src\Shared\Presentation\Utils\BaseHandler;
 
 class UserHandler extends BaseHandler
 {
